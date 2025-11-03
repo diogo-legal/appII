@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+
+class MyHome extends StatelessWidget {
+  const MyHome({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: Placeholder(),
+
+  appBar: AppBar(
+
+    actions: <Widget>[
+      IconButton(onPressed: (){},
+       icon: Icon(Icons.add_moderator_rounded)),
+
+      IconButton(onPressed: (){},
+       icon: Icon(Icons.arrow_circle_right_outlined,color: Colors.amber,))
+       ],
+    
+
+    centerTitle: true,
+
+    title: Text("aula 5" , style:  TextStyle(color: Colors.cyan),) ,
+
+    backgroundColor: Colors.blueGrey,
+  ),
+  body: SingleChildScrollView(
+  child: Column(
+    children: <Widget>[
+      Padding(padding: const EdgeInsets.all(16.0),
+      child: Text
+      ("flutter",
+      style: TextStyle(fontSize: 40),
+        ),
+      ),
+      Container(
+        width: double.infinity,
+        height: 400,
+        child: Image.asset("lib/assets/Papalegua.webp",
+        fit: BoxFit.cover,
+        ),
+       
+      ),
+       Container(
+        width: double.infinity,
+        height: 600,
+        child: Image.asset("lib/assets/images.jpg",
+        fit: BoxFit.cover,
+        alignment: AlignmentGeometry.topCenter,
+        ),
+       
+        ),
+    ],
+  ),
+  ),
+    );
+    
+  }
+  
+}
