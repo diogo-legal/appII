@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Mystory extends StatelessWidget {
-  final String? title = "perfil";
+  final String? title;
 
-  const Mystory ({super.key, required title});
+  const Mystory ({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

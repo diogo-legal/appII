@@ -1,4 +1,7 @@
+import 'package:aula6/widgets/mycard.dart';
+import 'package:aula6/widgets/mydrawer.dart';
 import 'package:aula6/widgets/mystory.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -11,43 +14,32 @@ class MyHomePage extends StatelessWidget {
         title: Text("aula 6!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"),
         backgroundColor: Colors.amber,
       ),
-      drawer: Drawer(
-        width: MediaQuery.of(context).size.width * 0.5,
-        backgroundColor: Colors.yellow,
-        elevation: 1,
-        child: Column( 
+      drawer: Mydrawer(),
+      body: SingleChildScrollView(
+        child: Column(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 30, bottom: 30), 
-              child: Text(
-                "bem vindo!",
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.orangeAccent,
-                  fontWeight: FontWeight.bold,),
-                ),
+            SizedBox(
+              height: 200,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                itemBuilder: (context, itens) {
+                  return Mycard(title: "carros", image: "", like: false);
+                  }
+                  ),
             ),
-            ListTile(
-              iconColor: Colors.amber,
-              textColor: Colors.amber,
-              leading: Icon(Icons.mail),
-              title: Text("contato"),
-            ),
-            ListTile(      
-              iconColor: Colors.white,
-              textColor: Colors.white,
-              leading: Icon(Icons.settings),
-              title: Text("preferencias"),
-  ),
+             SizedBox(
+              height: 200,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 1,
+                itemBuilder: (context, itens) {
+                  return Mystory(title: "bblicequetas",);
+                  }
+                  ),
+            )
           ],
         ),
-      ),
-      body: Column(
-        children: <Widget>[
-          Mystory(title: "carros",),
-          Mystory(title: "roupas",),
-
-        ],
       ),
     );
   }
