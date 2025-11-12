@@ -1,3 +1,4 @@
+import 'package:aula6/model/profile.dart';
 import 'package:flutter/material.dart';
 
 class Mycard extends StatefulWidget {
@@ -11,6 +12,18 @@ class Mycard extends StatefulWidget {
 }
 
 class _MyCardState extends State<Mycard> {
+  //criando lista de dados
+
+  
+ 
+  
+    bool likeState = false;
+    void _changelike(){
+    setState(() {
+      likeState = !likeState;
+    }); }
+  
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +39,9 @@ class _MyCardState extends State<Mycard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(widget.title!),
-              IconButton(onPressed: (){}, icon: Icon(Icons.favorite))
+              IconButton(
+                onPressed: _changelike,
+               icon: (likeState) ? Icon(Icons.favorite) : Icon(Icons.favorite_border))
             ],
           ),
         )
