@@ -16,8 +16,7 @@ class Mystory extends StatelessWidget {
             
             radius: 60,
             backgroundColor: Colors.amberAccent,
-          child: (image! == "") ? FlutterLogo(size: 90):
-          Image.network(image!, fit: BoxFit.contain,),
+        backgroundImage: NetworkImage(image!),
         
           ),
           Text(this.title!)
